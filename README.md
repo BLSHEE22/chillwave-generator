@@ -1,8 +1,12 @@
 # Chillwave Generator
 An engine that randomly generates chillwave music.
 
-The "randomMusic.circ" file is intended to be opened in Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
+--SETUP--
 
-The MIPS instructions - "randomMusicMipsCode.txt" - should then be loaded into the circuit.
+- Open 'randomMusic.circ' in Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
 
-Further instructions are listed inside the circuit!
+- Import the 'randomMusicMipsCode.txt' file into the circuit.
+
+- Follow the written instructions for starting the program.
+
+- Enjoy!
