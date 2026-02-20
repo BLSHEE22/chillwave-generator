@@ -3,42 +3,44 @@ An engine that randomly generates chillwave music.
 
 ## Setup
 
-### 1. Download Logisim-evolution at https://github.com/kevinawalsh/logisim-evolution.
+1. Download Logisim-evolution at https://github.com/kevinawalsh/logisim-evolution.
 <br>
 
-### 2. Open `randomMusic.circ` with Logisim.
+2. Open `randomMusic.circ` with Logisim.
 <br>
 
-### 3. If program memory (ROM 4k x 8) is not already populated...
+3. If program memory (ROM 4k x 8) is not already populated...
 - Right-click on the tile.
 - Click 'Load Memory Image' and import `randomMusicMipsCode.txt`.
 <br>
 
-### 4. If the 'kahdeg MIDI' folder is not already in the top left-hand menu...
+4. If the 'kahdeg MIDI' folder is not already in the top left-hand menu...
 - Go to 'Project->Load Library' and select 'JAR Library'.
 - Open the 'midi-env' folder, select 'midi-env.jar', and open it.
 - You should now see a 'kahdeg MIDI' folder in the top left-hand menu.
 <br>
 
-### 5. Now go to 'Simluate' and make sure the 'Auto-Tick Frequency' is set to 500 Hz.
+5. Now go to 'Simluate' and make sure the 'Auto-Tick Frequency' is set to 500 Hz.
 <br>
 
-### 6. Reset the simulation (command-R for Mac).
+6. Reset the simulation (command-R for Mac).
+<br>
 
-4. At the very bottom of the circuit, you should see a 'Sustain Pedal' module. 
+7. At the very bottom of the circuit, you should see a 'Sustain Pedal' module. 
 - Flip switch '2' to lock the sustain pedal in place.
 - Make sure there is 0 signal sending through the 'Pedal' tunnel. This means the damper is off!
 
 How it should look with the sustain pedal locked:
 !['N/A'](locked_sustain.png)
+<br>
 
-4. Start the simulation clock (command-K for Mac).
+8. Start the simulation clock (command-K for Mac).
 
 - You should see the circuit begin to execute. It will now wait for your input parameters that will decide the tonal center, scale, and melody type of the generated music.
 
-4. Click the input box which says 'HERE' next to it using the 'Hand' tool.
+9. Click the input box which says 'HERE' next to it using the 'Hand' tool.
 
-5. Enter an integer which represents the **tonal center** and press Enter.
+10. Enter an integer which represents the **tonal center** and press Enter.
 
 Options:
 -  0 = A
