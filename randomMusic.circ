@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="4.0.4-HC" version="1.0">
+<project source="5.0.4-HC" version="1.0">
   This file is intended to be loaded by Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
 
   <lib desc="#Wiring" name="0">
@@ -78,18 +78,20 @@
     <tool name="Text Tool">
       <a name="font" val="SansSerif plain 12"/>
       <a name="halign" val="center"/>
-      <a name="text" val=""/>
+      <a name="text" val="text"/>
       <a name="valign" val="base"/>
     </tool>
   </lib>
   <lib desc="#BFH-Praktika" name="7"/>
   <lib desc="#Analog" name="8"/>
-  <lib desc="jar#midi-ev.jar#kahdeg.test.library" name="9"/>
+  <lib desc="#Audio" name="9"/>
+  <lib desc="jar#midi-env/midi-ev.jar#kahdeg.test.library" name="10"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
     <a name="simrand" val="0"/>
+    <a name="simsmooth" val="50"/>
   </options>
   <mappings>
     <tool lib="6" map="Button2" name="Menu Tool"/>
@@ -102,9 +104,11 @@
     <tool lib="6" name="Text Tool">
       <a name="font" val="SansSerif plain 12"/>
       <a name="halign" val="center"/>
-      <a name="text" val=""/>
+      <a name="text" val="text"/>
       <a name="valign" val="base"/>
     </tool>
+    <tool lib="6" name="Callout"/>
+    <tool lib="6" name="Image"/>
     <sep/>
     <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
@@ -210,7 +214,7 @@
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(1060,910)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="8"/>
     </comp>
     <comp lib="0" loc="(1110,1200)" name="Tunnel">
@@ -886,6 +890,7 @@
     </comp>
     <comp lib="0" loc="(2250,680)" name="Constant">
       <a name="facing" val="south"/>
+      <a name="value" val="0x1"/>
       <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(2260,1010)" name="Constant">
@@ -1449,7 +1454,7 @@ a1 28 0 8 34 b 0 2d
     </comp>
     <comp lib="5" loc="(910,1510)" name="DipSwitch">
       <a name="facing" val="south"/>
-      <a name="label" val="Lock Damper"/>
+      <a name="label" val="Lock Sustain"/>
       <a name="number" val="2"/>
     </comp>
     <comp lib="6" loc="(1146,1501)" name="Text">
@@ -1584,7 +1589,7 @@ Then you can begin input starting from stage 1!  </a>
 3 = Confused</a>
     </comp>
     <comp lib="6" loc="(752,759)" name="Text">
-      <a name="font" val="Plantin MT Std plain 104"/>
+      <a name="font" val="Dialog plain 104"/>
       <a name="text" val="-----&gt;"/>
     </comp>
     <comp lib="6" loc="(758,1234)" name="Text">
@@ -1613,18 +1618,8 @@ ENTER</a>
     </comp>
     <comp lib="6" loc="(880,1424)" name="Text">
       <a name="font" val="Silom plain 18"/>
-      <a name="text">Damper Pedal
+      <a name="text">Sustain Pedal
 </a>
-    </comp>
-    <comp lib="9" loc="(2290,710)" name="MIDI output"/>
-    <comp lib="9" loc="(2300,1040)" name="MIDI output">
-      <a name="channel" val="1"/>
-    </comp>
-    <comp lib="9" loc="(2300,1220)" name="MIDI output">
-      <a name="channel" val="1"/>
-    </comp>
-    <comp lib="9" loc="(2300,870)" name="MIDI output">
-      <a name="channel" val="1"/>
     </comp>
     <comp loc="(1030,340)" name="northbridge"/>
     <comp loc="(1030,660)" name="southbridge"/>
@@ -2240,25 +2235,6 @@ ENTER</a>
   <circuit name="decode">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="287" y="27"/>
-      <circ-port height="10" pin="330,180" width="10" x="35" y="25"/>
-      <circ-port height="10" pin="330,220" width="10" x="85" y="25"/>
-      <circ-port height="10" pin="330,260" width="10" x="175" y="25"/>
-      <circ-port height="10" pin="330,300" width="10" x="255" y="25"/>
-      <circ-port height="10" pin="340,380" width="10" x="285" y="25"/>
-      <circ-port height="10" pin="410,750" width="10" x="195" y="25"/>
-      <circ-port height="10" pin="410,800" width="10" x="215" y="25"/>
-      <circ-port height="10" pin="410,850" width="10" x="55" y="25"/>
-      <circ-port height="10" pin="470,300" width="10" x="295" y="45"/>
-      <circ-port height="10" pin="470,320" width="10" x="295" y="65"/>
-      <circ-port height="10" pin="470,340" width="10" x="295" y="85"/>
-      <circ-port height="10" pin="470,360" width="10" x="295" y="105"/>
-      <circ-port height="10" pin="470,380" width="10" x="295" y="125"/>
-      <circ-port height="10" pin="480,660" width="10" x="235" y="25"/>
-      <circ-port height="10" pin="680,750" width="10" x="115" y="25"/>
-      <circ-port height="10" pin="780,750" width="10" x="135" y="25"/>
-      <circ-port height="10" pin="870,750" width="10" x="155" y="25"/>
-      <circ-port height="8" pin="100,40" width="8" x="26" y="76"/>
       <polyline fill="none" points="158,99 158,110" stroke="#a3a3a3"/>
       <polyline fill="none" points="60,47 60,35" stroke="#636363"/>
       <polyline fill="none" points="85,99 85,110" stroke="#a3a3a3"/>
@@ -2337,6 +2313,25 @@ ENTER</a>
       <visible-led font-family="SansSerif" font-size="9" height="10" label="center" path="/LED(950,550)" stroke-width="0" width="10" x="110" y="170"/>
       <visible-led font-family="SansSerif" font-size="9" height="10" label="center" path="/LED(950,570)" stroke-width="0" width="10" x="110" y="180"/>
       <visible-led font-family="SansSerif" font-size="9" height="10" label="center" path="/LED(950,590)" stroke-width="0" width="10" x="110" y="190"/>
+      <circ-port height="10" pin="330,180" width="10" x="35" y="25"/>
+      <circ-port height="10" pin="330,220" width="10" x="85" y="25"/>
+      <circ-port height="10" pin="330,260" width="10" x="175" y="25"/>
+      <circ-port height="10" pin="330,300" width="10" x="255" y="25"/>
+      <circ-port height="10" pin="340,380" width="10" x="285" y="25"/>
+      <circ-port height="10" pin="410,750" width="10" x="195" y="25"/>
+      <circ-port height="10" pin="410,800" width="10" x="215" y="25"/>
+      <circ-port height="10" pin="410,850" width="10" x="55" y="25"/>
+      <circ-port height="10" pin="470,300" width="10" x="295" y="45"/>
+      <circ-port height="10" pin="470,320" width="10" x="295" y="65"/>
+      <circ-port height="10" pin="470,340" width="10" x="295" y="85"/>
+      <circ-port height="10" pin="470,360" width="10" x="295" y="105"/>
+      <circ-port height="10" pin="470,380" width="10" x="295" y="125"/>
+      <circ-port height="10" pin="480,660" width="10" x="235" y="25"/>
+      <circ-port height="10" pin="680,750" width="10" x="115" y="25"/>
+      <circ-port height="10" pin="780,750" width="10" x="135" y="25"/>
+      <circ-port height="10" pin="870,750" width="10" x="155" y="25"/>
+      <circ-port height="8" pin="100,40" width="8" x="26" y="76"/>
+      <circ-anchor facing="east" height="6" width="6" x="287" y="27"/>
     </appear>
     <comp lib="0" loc="(100,40)" name="Pin">
       <a name="label" val="Instr"/>
@@ -2645,7 +2640,7 @@ ENTER</a>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(640,680)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(660,660)" name="Constant">
@@ -2668,7 +2663,7 @@ ENTER</a>
     </comp>
     <comp lib="0" loc="(770,680)" name="Constant">
       <a name="facing" val="south"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(780,750)" name="Pin">
@@ -2686,7 +2681,7 @@ ENTER</a>
     </comp>
     <comp lib="0" loc="(860,680)" name="Constant">
       <a name="facing" val="south"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(870,750)" name="Pin">
@@ -3513,12 +3508,6 @@ in future to be able to detect specific individual instructions.</a>
   <circuit name="branchcalc">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="47" y="107"/>
-      <circ-port height="10" pin="200,580" width="10" x="45" y="105"/>
-      <circ-port height="8" pin="140,120" width="8" x="106" y="66"/>
-      <circ-port height="8" pin="490,420" width="8" x="126" y="126"/>
-      <circ-port height="8" pin="520,610" width="8" x="136" y="106"/>
-      <circ-port height="8" pin="60,120" width="8" x="76" y="66"/>
       <rect fill="none" height="60" stroke="#000000" stroke-width="2" width="90" x="50" y="70"/>
       <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="10" text-anchor="end" x="95" y="110">BrOffset</text>
       <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="10" text-anchor="start" x="107" y="77">Y</text>
@@ -3526,6 +3515,12 @@ in future to be able to detect specific individual instructions.</a>
       <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="10" text-anchor="start" x="114" y="124">cond</text>
       <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="10" text-anchor="start" x="77" y="77">X</text>
       <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="97" y="85">branchcalc</text>
+      <circ-port height="10" pin="200,580" width="10" x="45" y="105"/>
+      <circ-port height="8" pin="140,120" width="8" x="106" y="66"/>
+      <circ-port height="8" pin="490,420" width="8" x="126" y="126"/>
+      <circ-port height="8" pin="520,610" width="8" x="136" y="106"/>
+      <circ-port height="8" pin="60,120" width="8" x="76" y="66"/>
+      <circ-anchor facing="east" height="6" width="6" x="47" y="107"/>
     </appear>
     <comp lib="0" loc="(140,120)" name="Pin">
       <a name="facing" val="south"/>
@@ -3535,7 +3530,7 @@ in future to be able to detect specific individual instructions.</a>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(140,250)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(200,580)" name="Pin">
@@ -3546,7 +3541,7 @@ in future to be able to detect specific individual instructions.</a>
     </comp>
     <comp lib="0" loc="(360,530)" name="Constant">
       <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(410,350)" name="Splitter">
@@ -3557,7 +3552,7 @@ in future to be able to detect specific individual instructions.</a>
       <a name="spacing" val="4"/>
     </comp>
     <comp lib="0" loc="(430,590)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(490,420)" name="Pin">
@@ -3709,13 +3704,6 @@ in future to be able to detect specific individual instructions.</a>
   <circuit name="ALU">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="177" y="127"/>
-      <circ-port height="10" pin="720,240" width="10" x="175" y="125"/>
-      <circ-port height="8" pin="140,70" width="8" x="96" y="66"/>
-      <circ-port height="8" pin="140,90" width="8" x="96" y="186"/>
-      <circ-port height="8" pin="550,760" width="8" x="116" y="206"/>
-      <circ-port height="8" pin="680,550" width="8" x="136" y="196"/>
-      <circ-port height="8" pin="90,140" width="8" x="156" y="186"/>
       <polygon fill="none" points="100,40 100,120 110,130 100,140 100,220 180,180 180,80" stroke="#000000" stroke-width="2"/>
       <polyline fill="none" points="115,212 116,205 124,208" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="110" y="70">X</text>
@@ -3723,6 +3711,13 @@ in future to be able to detect specific individual instructions.</a>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="140" y="188">Op</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="142" y="129">ALU</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="160" y="180">sh</text>
+      <circ-port height="10" pin="720,240" width="10" x="175" y="125"/>
+      <circ-port height="8" pin="140,70" width="8" x="96" y="66"/>
+      <circ-port height="8" pin="140,90" width="8" x="96" y="186"/>
+      <circ-port height="8" pin="550,760" width="8" x="116" y="206"/>
+      <circ-port height="8" pin="680,550" width="8" x="136" y="196"/>
+      <circ-port height="8" pin="90,140" width="8" x="156" y="186"/>
+      <circ-anchor facing="east" height="6" width="6" x="177" y="127"/>
     </appear>
     <comp lib="0" loc="(140,70)" name="Pin">
       <a name="label" val="X"/>
@@ -3872,11 +3867,11 @@ in future to be able to detect specific individual instructions.</a>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(630,70)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(650,330)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(680,550)" name="Pin">
@@ -4277,14 +4272,6 @@ in future to be able to detect specific individual instructions.</a>
   <circuit name="regfile">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="307" y="87"/>
-      <circ-port height="10" pin="1360,200" width="10" x="305" y="85"/>
-      <circ-port height="10" pin="1440,1750" width="10" x="305" y="185"/>
-      <circ-port height="8" pin="1320,400" width="8" x="226" y="236"/>
-      <circ-port height="8" pin="1390,1950" width="8" x="256" y="236"/>
-      <circ-port height="8" pin="180,370" width="8" x="76" y="236"/>
-      <circ-port height="8" pin="310,400" width="8" x="116" y="236"/>
-      <circ-port height="8" pin="340,20" width="8" x="66" y="136"/>
       <polyline fill="none" points="75,240 80,235 85,240" stroke="#000000"/>
       <rect fill="none" height="190" stroke="#000000" stroke-width="2" width="240" x="70" y="50"/>
       <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="10" text-anchor="end" x="305" y="190">Y</text>
@@ -4453,6 +4440,14 @@ in future to be able to detect specific individual instructions.</a>
       <visible-register height="10" path="/Register(640,820)" stroke-width="0" width="53" x="110" y="190"/>
       <visible-register height="10" path="/Register(640,880)" stroke-width="0" width="53" x="110" y="200"/>
       <visible-register height="10" path="/Register(640,940)" stroke-width="0" width="53" x="110" y="210"/>
+      <circ-port height="10" pin="1360,200" width="10" x="305" y="85"/>
+      <circ-port height="10" pin="1440,1750" width="10" x="305" y="185"/>
+      <circ-port height="8" pin="1320,400" width="8" x="226" y="236"/>
+      <circ-port height="8" pin="1390,1950" width="8" x="256" y="236"/>
+      <circ-port height="8" pin="180,370" width="8" x="76" y="236"/>
+      <circ-port height="8" pin="310,400" width="8" x="116" y="236"/>
+      <circ-port height="8" pin="340,20" width="8" x="66" y="136"/>
+      <circ-anchor facing="east" height="6" width="6" x="307" y="87"/>
     </appear>
     <comp lib="0" loc="(1320,400)" name="Pin">
       <a name="facing" val="north"/>
@@ -4667,7 +4662,7 @@ in future to be able to detect specific individual instructions.</a>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
     <comp lib="0" loc="(660,40)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="2" loc="(1340,200)" name="Multiplexer">
@@ -5649,18 +5644,18 @@ in future to be able to detect specific individual instructions.</a>
   <circuit name="plusfour">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="57" y="87"/>
-      <circ-port height="10" pin="410,180" width="10" x="55" y="85"/>
-      <circ-port height="8" pin="250,170" width="8" x="56" y="66"/>
       <rect fill="none" height="20" stroke="#000000" stroke-width="2" width="20" x="50" y="70"/>
       <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="59" y="73">+4</text>
+      <circ-port height="10" pin="410,180" width="10" x="55" y="85"/>
+      <circ-port height="8" pin="250,170" width="8" x="56" y="66"/>
+      <circ-anchor facing="east" height="6" width="6" x="57" y="87"/>
     </appear>
     <comp lib="0" loc="(250,170)" name="Pin">
       <a name="label" val="A"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(320,190)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x00000004"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(410,180)" name="Pin">
@@ -5680,31 +5675,6 @@ in future to be able to detect specific individual instructions.</a>
   <circuit name="northbridge">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="177" y="77"/>
-      <circ-port height="10" pin="400,1090" width="10" x="105" y="225"/>
-      <circ-port height="10" pin="420,520" width="10" x="65" y="225"/>
-      <circ-port height="10" pin="460,1090" width="10" x="115" y="225"/>
-      <circ-port height="10" pin="490,520" width="10" x="85" y="225"/>
-      <circ-port height="10" pin="640,50" width="10" x="125" y="45"/>
-      <circ-port height="10" pin="770,1090" width="10" x="95" y="225"/>
-      <circ-port height="10" pin="840,450" width="10" x="175" y="205"/>
-      <circ-port height="10" pin="840,490" width="10" x="175" y="75"/>
-      <circ-port height="10" pin="850,1070" width="10" x="175" y="145"/>
-      <circ-port height="10" pin="850,630" width="10" x="175" y="95"/>
-      <circ-port height="10" pin="850,680" width="10" x="175" y="135"/>
-      <circ-port height="10" pin="850,740" width="10" x="175" y="125"/>
-      <circ-port height="10" pin="850,800" width="10" x="175" y="115"/>
-      <circ-port height="10" pin="850,860" width="10" x="175" y="105"/>
-      <circ-port height="8" pin="150,1010" width="8" x="26" y="186"/>
-      <circ-port height="8" pin="150,1050" width="8" x="26" y="206"/>
-      <circ-port height="8" pin="150,980" width="8" x="26" y="166"/>
-      <circ-port height="8" pin="160,660" width="8" x="106" y="46"/>
-      <circ-port height="8" pin="160,850" width="8" x="26" y="116"/>
-      <circ-port height="8" pin="160,880" width="8" x="26" y="136"/>
-      <circ-port height="8" pin="160,910" width="8" x="26" y="56"/>
-      <circ-port height="8" pin="310,50" width="8" x="86" y="46"/>
-      <circ-port height="8" pin="750,520" width="8" x="76" y="226"/>
-      <circ-port height="8" pin="840,420" width="8" x="176" y="216"/>
       <path d="M130,220 Q130,210 120,210" fill="none" stroke="#000000"/>
       <path d="M157,220 Q147,220 147,210" fill="none" stroke="#000000"/>
       <path d="M157,80 Q147,80 147,90" fill="none" stroke="#000000"/>
@@ -5737,6 +5707,31 @@ in future to be able to detect specific individual instructions.</a>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="147" y="154">M</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="94" y="208">I/O</text>
       <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="81" y="80">northbridge</text>
+      <circ-port height="10" pin="400,1090" width="10" x="105" y="225"/>
+      <circ-port height="10" pin="420,520" width="10" x="65" y="225"/>
+      <circ-port height="10" pin="460,1090" width="10" x="115" y="225"/>
+      <circ-port height="10" pin="490,520" width="10" x="85" y="225"/>
+      <circ-port height="10" pin="640,50" width="10" x="125" y="45"/>
+      <circ-port height="10" pin="770,1090" width="10" x="95" y="225"/>
+      <circ-port height="10" pin="840,450" width="10" x="175" y="205"/>
+      <circ-port height="10" pin="840,490" width="10" x="175" y="75"/>
+      <circ-port height="10" pin="850,1070" width="10" x="175" y="145"/>
+      <circ-port height="10" pin="850,630" width="10" x="175" y="95"/>
+      <circ-port height="10" pin="850,680" width="10" x="175" y="135"/>
+      <circ-port height="10" pin="850,740" width="10" x="175" y="125"/>
+      <circ-port height="10" pin="850,800" width="10" x="175" y="115"/>
+      <circ-port height="10" pin="850,860" width="10" x="175" y="105"/>
+      <circ-port height="8" pin="150,1010" width="8" x="26" y="186"/>
+      <circ-port height="8" pin="150,1050" width="8" x="26" y="206"/>
+      <circ-port height="8" pin="150,980" width="8" x="26" y="166"/>
+      <circ-port height="8" pin="160,660" width="8" x="106" y="46"/>
+      <circ-port height="8" pin="160,850" width="8" x="26" y="116"/>
+      <circ-port height="8" pin="160,880" width="8" x="26" y="136"/>
+      <circ-port height="8" pin="160,910" width="8" x="26" y="56"/>
+      <circ-port height="8" pin="310,50" width="8" x="86" y="46"/>
+      <circ-port height="8" pin="750,520" width="8" x="76" y="226"/>
+      <circ-port height="8" pin="840,420" width="8" x="176" y="216"/>
+      <circ-anchor facing="east" height="6" width="6" x="177" y="77"/>
     </appear>
     <comp lib="0" loc="(150,1010)" name="Pin">
       <a name="label" val="word"/>
@@ -6550,23 +6545,6 @@ Address 3 goes with low byte DD
   <circuit name="southbridge">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="167" y="97"/>
-      <circ-port height="10" pin="350,130" width="10" x="65" y="45"/>
-      <circ-port height="10" pin="680,290" width="10" x="165" y="95"/>
-      <circ-port height="10" pin="680,320" width="10" x="165" y="115"/>
-      <circ-port height="10" pin="680,360" width="10" x="165" y="105"/>
-      <circ-port height="10" pin="680,570" width="10" x="165" y="175"/>
-      <circ-port height="10" pin="680,610" width="10" x="165" y="165"/>
-      <circ-port height="10" pin="680,710" width="10" x="165" y="235"/>
-      <circ-port height="8" pin="480,130" width="8" x="56" y="46"/>
-      <circ-port height="8" pin="570,130" width="8" x="96" y="46"/>
-      <circ-port height="8" pin="60,120" width="8" x="76" y="46"/>
-      <circ-port height="8" pin="610,130" width="8" x="106" y="46"/>
-      <circ-port height="8" pin="640,860" width="8" x="166" y="276"/>
-      <circ-port height="8" pin="640,890" width="8" x="166" y="286"/>
-      <circ-port height="8" pin="650,130" width="8" x="86" y="46"/>
-      <circ-port height="8" pin="680,470" width="8" x="166" y="196"/>
-      <circ-port height="8" pin="680,500" width="8" x="166" y="186"/>
       <path d="M142,170 Q132,170 132,180" fill="none" stroke="#000000"/>
       <path d="M142,204 Q132,204 132,194" fill="none" stroke="#000000"/>
       <path d="M142,226 Q132,226 132,236" fill="none" stroke="#000000"/>
@@ -6597,6 +6575,23 @@ Address 3 goes with low byte DD
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="123" y="111">LCD</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="99" y="285">&amp; Switches</text>
       <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="82" y="80">southbridge</text>
+      <circ-port height="10" pin="350,130" width="10" x="65" y="45"/>
+      <circ-port height="10" pin="680,290" width="10" x="165" y="95"/>
+      <circ-port height="10" pin="680,320" width="10" x="165" y="115"/>
+      <circ-port height="10" pin="680,360" width="10" x="165" y="105"/>
+      <circ-port height="10" pin="680,570" width="10" x="165" y="175"/>
+      <circ-port height="10" pin="680,610" width="10" x="165" y="165"/>
+      <circ-port height="10" pin="680,710" width="10" x="165" y="235"/>
+      <circ-port height="8" pin="480,130" width="8" x="56" y="46"/>
+      <circ-port height="8" pin="570,130" width="8" x="96" y="46"/>
+      <circ-port height="8" pin="60,120" width="8" x="76" y="46"/>
+      <circ-port height="8" pin="610,130" width="8" x="106" y="46"/>
+      <circ-port height="8" pin="640,860" width="8" x="166" y="276"/>
+      <circ-port height="8" pin="640,890" width="8" x="166" y="286"/>
+      <circ-port height="8" pin="650,130" width="8" x="86" y="46"/>
+      <circ-port height="8" pin="680,470" width="8" x="166" y="196"/>
+      <circ-port height="8" pin="680,500" width="8" x="166" y="186"/>
+      <circ-anchor facing="east" height="6" width="6" x="167" y="97"/>
     </appear>
     <comp lib="0" loc="(170,180)" name="Splitter">
       <a name="facing" val="north"/>
@@ -6798,12 +6793,12 @@ Address 3 goes with low byte DD
     </comp>
     <comp lib="0" loc="(570,920)" name="Constant">
       <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000"/>
       <a name="width" val="19"/>
     </comp>
     <comp lib="0" loc="(580,510)" name="Constant">
       <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00000000"/>
       <a name="width" val="31"/>
     </comp>
     <comp lib="0" loc="(60,120)" name="Pin">
@@ -6820,7 +6815,7 @@ Address 3 goes with low byte DD
     </comp>
     <comp lib="0" loc="(600,480)" name="Constant">
       <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x000000"/>
       <a name="width" val="24"/>
     </comp>
     <comp lib="0" loc="(610,130)" name="Pin">
@@ -7066,12 +7061,12 @@ Address 3 goes with low byte DD
   <circuit name="plus">
     <a name="appearance" val="custom"/>
     <appear>
-      <circ-anchor facing="east" height="6" width="6" x="57" y="87"/>
+      <rect fill="none" height="20" stroke="#000000" stroke-width="2" width="28" x="46" y="70"/>
+      <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="60" y="71">+</text>
       <circ-port height="10" pin="410,180" width="10" x="55" y="85"/>
       <circ-port height="8" pin="280,140" width="8" x="46" y="66"/>
       <circ-port height="8" pin="280,220" width="8" x="66" y="66"/>
-      <rect fill="none" height="20" stroke="#000000" stroke-width="2" width="28" x="46" y="70"/>
-      <text dominant-baseline="top" font-family="SansSerif" font-size="12" text-anchor="middle" x="60" y="71">+</text>
+      <circ-anchor facing="east" height="6" width="6" x="57" y="87"/>
     </appear>
     <comp lib="0" loc="(280,140)" name="Pin">
       <a name="label" val="A"/>
@@ -7147,7 +7142,7 @@ Address 3 goes with low byte DD
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(210,160)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x000"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(210,360)" name="Pin">
@@ -7176,7 +7171,7 @@ Address 3 goes with low byte DD
       <a name="incoming" val="12"/>
     </comp>
     <comp lib="0" loc="(260,160)" name="Constant">
-      <a name="value" val="0x40"/>
+      <a name="value" val="0x040"/>
       <a name="width" val="12"/>
     </comp>
     <comp lib="0" loc="(280,510)" name="Tunnel">
@@ -7248,6 +7243,7 @@ Address 3 goes with low byte DD
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(80,170)" name="Constant">
+      <a name="value" val="0x1"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(80,220)" name="Tunnel">
@@ -7265,7 +7261,7 @@ Address 3 goes with low byte DD
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(820,230)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x0000"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(840,340)" name="Constant">
@@ -7678,99 +7674,99 @@ Address 3 goes with low byte DD
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,610)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,880)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(650,340)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,600)" name="Constant">
-      <a name="value" val="0x3"/>
+      <a name="value" val="0x03"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,620)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,870)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,890)" name="Constant">
-      <a name="value" val="0x9"/>
+      <a name="value" val="0x09"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,330)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,350)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,630)" name="Constant">
-      <a name="value" val="0x8"/>
+      <a name="value" val="0x08"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,900)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,360)" name="Constant">
-      <a name="value" val="0x9"/>
+      <a name="value" val="0x09"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,590)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,860)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,320)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,640)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,910)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,370)" name="Constant">
-      <a name="value" val="0xb"/>
+      <a name="value" val="0x0b"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,580)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,850)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,310)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,650)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,920)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(730,380)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(80,310)" name="Pin">
@@ -8208,13 +8204,15 @@ Address 3 goes with low byte DD
       <a name="incoming" val="7"/>
     </comp>
     <comp lib="0" loc="(570,680)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(60,810)" name="Pin">
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(640,720)" name="Constant"/>
+    <comp lib="0" loc="(640,720)" name="Constant">
+      <a name="value" val="0x1"/>
+    </comp>
     <comp lib="0" loc="(720,640)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="Velocity"/>
@@ -8384,7 +8382,7 @@ Address 3 goes with low byte DD
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(210,160)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x000"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(210,360)" name="Pin">
@@ -8413,7 +8411,7 @@ Address 3 goes with low byte DD
       <a name="incoming" val="12"/>
     </comp>
     <comp lib="0" loc="(260,160)" name="Constant">
-      <a name="value" val="0x40"/>
+      <a name="value" val="0x040"/>
       <a name="width" val="12"/>
     </comp>
     <comp lib="0" loc="(280,510)" name="Tunnel">
@@ -8485,6 +8483,7 @@ Address 3 goes with low byte DD
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(80,170)" name="Constant">
+      <a name="value" val="0x1"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(80,220)" name="Tunnel">
@@ -8502,7 +8501,7 @@ Address 3 goes with low byte DD
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(820,230)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x0000"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(840,340)" name="Constant">
@@ -8917,99 +8916,99 @@ Address 3 goes with low byte DD
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,610)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,880)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(650,340)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,600)" name="Constant">
-      <a name="value" val="0x3"/>
+      <a name="value" val="0x03"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,620)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,870)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,890)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,330)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,350)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,630)" name="Constant">
-      <a name="value" val="0x8"/>
+      <a name="value" val="0x08"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,900)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,360)" name="Constant">
-      <a name="value" val="0x9"/>
+      <a name="value" val="0x09"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,590)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,860)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,320)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,640)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,910)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,370)" name="Constant">
-      <a name="value" val="0xb"/>
+      <a name="value" val="0x0b"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,580)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,850)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,310)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,650)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,920)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(730,380)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(80,310)" name="Pin">
@@ -9447,13 +9446,15 @@ Address 3 goes with low byte DD
       <a name="incoming" val="7"/>
     </comp>
     <comp lib="0" loc="(570,680)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(60,810)" name="Pin">
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(640,720)" name="Constant"/>
+    <comp lib="0" loc="(640,720)" name="Constant">
+      <a name="value" val="0x1"/>
+    </comp>
     <comp lib="0" loc="(720,640)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="Velocity"/>
@@ -9623,7 +9624,7 @@ Address 3 goes with low byte DD
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(210,160)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x000"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(210,360)" name="Pin">
@@ -9652,7 +9653,7 @@ Address 3 goes with low byte DD
       <a name="incoming" val="12"/>
     </comp>
     <comp lib="0" loc="(260,160)" name="Constant">
-      <a name="value" val="0x40"/>
+      <a name="value" val="0x040"/>
       <a name="width" val="12"/>
     </comp>
     <comp lib="0" loc="(280,510)" name="Tunnel">
@@ -9724,6 +9725,7 @@ Address 3 goes with low byte DD
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(80,170)" name="Constant">
+      <a name="value" val="0x1"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(80,220)" name="Tunnel">
@@ -9741,7 +9743,7 @@ Address 3 goes with low byte DD
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(820,230)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x0000"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(840,340)" name="Constant">
@@ -10156,99 +10158,99 @@ Address 3 goes with low byte DD
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,610)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,880)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(650,340)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,600)" name="Constant">
-      <a name="value" val="0x3"/>
+      <a name="value" val="0x03"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,620)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,870)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,890)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,330)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,350)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,630)" name="Constant">
-      <a name="value" val="0x8"/>
+      <a name="value" val="0x08"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,900)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,360)" name="Constant">
-      <a name="value" val="0x9"/>
+      <a name="value" val="0x09"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,590)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,860)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,320)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,640)" name="Constant">
-      <a name="value" val="0xa"/>
+      <a name="value" val="0x0a"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,910)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,370)" name="Constant">
-      <a name="value" val="0xb"/>
+      <a name="value" val="0x0b"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,580)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,850)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,310)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,650)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,920)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(730,380)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(80,310)" name="Pin">
@@ -10686,13 +10688,15 @@ Address 3 goes with low byte DD
       <a name="incoming" val="7"/>
     </comp>
     <comp lib="0" loc="(570,680)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(60,810)" name="Pin">
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(640,720)" name="Constant"/>
+    <comp lib="0" loc="(640,720)" name="Constant">
+      <a name="value" val="0x1"/>
+    </comp>
     <comp lib="0" loc="(720,640)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="Velocity"/>
@@ -10859,7 +10863,7 @@ Address 3 goes with low byte DD
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(210,160)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x000"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(210,360)" name="Pin">
@@ -10939,6 +10943,7 @@ Address 3 goes with low byte DD
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(70,130)" name="Constant">
+      <a name="value" val="0x1"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(70,500)" name="Clock">
@@ -10963,6 +10968,7 @@ Address 3 goes with low byte DD
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(80,170)" name="Constant">
+      <a name="value" val="0x1"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(80,220)" name="Tunnel">
@@ -10980,7 +10986,7 @@ Address 3 goes with low byte DD
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(820,230)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x0000"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(840,340)" name="Constant">
@@ -11384,99 +11390,99 @@ Address 3 goes with low byte DD
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,610)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(640,880)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(650,340)" name="Constant">
-      <a name="value" val="0x5"/>
+      <a name="value" val="0x05"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,600)" name="Constant">
-      <a name="value" val="0x3"/>
+      <a name="value" val="0x03"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,620)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,870)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(660,890)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,330)" name="Constant">
-      <a name="value" val="0x4"/>
+      <a name="value" val="0x04"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(670,350)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,630)" name="Constant">
-      <a name="value" val="0x8"/>
+      <a name="value" val="0x08"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(680,900)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,360)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,590)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(690,860)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,320)" name="Constant">
-      <a name="value" val="0x2"/>
+      <a name="value" val="0x02"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,640)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(700,910)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,370)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x07"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,580)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(710,850)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,310)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,650)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(720,920)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(730,380)" name="Constant">
-      <a name="value" val="0xc"/>
+      <a name="value" val="0x0c"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(80,310)" name="Pin">
@@ -11914,13 +11920,15 @@ Address 3 goes with low byte DD
       <a name="incoming" val="7"/>
     </comp>
     <comp lib="0" loc="(570,680)" name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="value" val="0x00"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(60,810)" name="Pin">
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(630,730)" name="Constant"/>
+    <comp lib="0" loc="(630,730)" name="Constant">
+      <a name="value" val="0x1"/>
+    </comp>
     <comp lib="0" loc="(720,640)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="Velocity"/>
