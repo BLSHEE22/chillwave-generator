@@ -3,34 +3,42 @@ An engine that randomly generates chillwave music.
 
 ## Setup
 
-1. Open 'randomMusic.circ' in Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
+### 1. Download Logisim-evolution at https://github.com/kevinawalsh/logisim-evolution.
+<br>
 
-2. If program memory (ROM 4k x 8) is not already populated...
-- Right-click it. 
-- Click 'Load Memory Image' and import the 'randomMusicMipsCode.txt' file.
+### 2. Open `randomMusic.circ` with Logisim.
+<br>
 
-3. If the 'kahdeg MIDI' folder doesn't already exist in the top left-hand menu...
+### 3. If program memory (ROM 4k x 8) is not already populated...
+- Right-click on the tile.
+- Click 'Load Memory Image' and import `randomMusicMipsCode.txt`.
+<br>
+
+### 4. If the 'kahdeg MIDI' folder is not already in the top left-hand menu...
 - Go to 'Project->Load Library' and select 'JAR Library'.
 - Open the 'midi-env' folder, select 'midi-env.jar', and open it.
 - You should now see a 'kahdeg MIDI' folder in the top left-hand menu.
+<br>
 
-4. Now go to 'Simluate' and make sure the 'Auto-Tick Frequency' is set to 500 Hz.
+### 5. Now go to 'Simluate' and make sure the 'Auto-Tick Frequency' is set to 500 Hz.
+<br>
 
-3. Reset the simulation (command-R for Mac)
+### 6. Reset the simulation (command-R for Mac).
 
 4. At the very bottom of the circuit, you should see a 'Sustain Pedal' module. 
 - Flip switch '2' to lock the sustain pedal in place.
-- Make sure there is 0 signal sending through the 'Pedal' tunnel, this means the damper is off!
+- Make sure there is 0 signal sending through the 'Pedal' tunnel. This means the damper is off!
 
-- How it should look with the sustain pedal locked:
-
-- !['N/A'](locked_sustain.png)
+How it should look with the sustain pedal locked:
+!['N/A'](locked_sustain.png)
 
 4. Start the simulation clock (command-K for Mac).
 
-- You should see the circuit begin to execute. It will now wait for your input parameters that will decide the tonal center, scale, and melody of the generated music.
+- You should see the circuit begin to execute. It will now wait for your input parameters that will decide the tonal center, scale, and melody type of the generated music.
 
-4. In the input box which says 'HERE' next to it, click it using the 'Hand' tool and enter an integer which represents the **tonal center** followed by Enter.
+4. Click the input box which says 'HERE' next to it using the 'Hand' tool.
+
+5. Enter an integer which represents the **tonal center** and press Enter.
 
 Options:
 -  0 = A
@@ -83,4 +91,4 @@ Once you drop of one these bad boys in, you'll most likely be operating blind fo
  
 When dragging in a MIDI block blindly, I try to line up my cursor with the middle of the 5 wires and between 2-3 units to the right of the connection point. It might take a couple of tries, but I promise it'll be worth it!
 
-8. Once you've got all four MIDI blocks in there, sit back, unwind, and enjoy the chillwave.
+Once you've got all four MIDI blocks in there, sit back, unwind, and enjoy the chillwave.
