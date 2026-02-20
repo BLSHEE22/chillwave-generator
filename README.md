@@ -30,6 +30,7 @@ An engine that randomly generates chillwave music.
 - Flip switch '2' to lock the sustain pedal in place.
 - Make sure there is 0 signal sending through the 'Pedal' tunnel. This means the damper is off!
 - How it should look with the sustain pedal locked:
+<br>
   - !['N/A'](locked_sustain.png)
 <br>
 
@@ -37,10 +38,10 @@ An engine that randomly generates chillwave music.
 - You should see the circuit begin to execute. It will now wait for your input parameters that will decide the tonal center, scale, and melody type of the generated music.
 <br>
 
-9. Click the input box which says 'HERE' next to it using the 'Hand' tool.
+9. Using the 'Hand' tool, click the input box which says 'HERE' next to it.
 <br>
 
-10. Enter an integer which represents the **tonal center** and press Enter.
+10. Enter an integer to represent the **tonal center** and press Enter.
 - Options:
   -  0 = A
   -  1 = A#/Bb
@@ -93,3 +94,5 @@ Once you drop of one these bad boys in, you'll most likely be operating blind fo
 When dragging in a MIDI block blindly, I try to line up my cursor with the middle of the 5 wires and between 2-3 units to the right of the connection point. It might take a couple of tries, but I promise it'll be worth it!
 
 Once you've got all four MIDI blocks in there, sit back, unwind, and enjoy the chillwave.
+
+When you're done listening, press command-K to stop the simulation.
