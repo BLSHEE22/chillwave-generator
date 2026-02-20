@@ -30,7 +30,6 @@ An engine that randomly generates chillwave music.
 - Flip switch '2' to lock the sustain pedal in place.
 - Make sure there is 0 signal sending through the 'Pedal' tunnel. This means the damper is off!
 - How it should look with the sustain pedal locked:
-<br>
   - !['N/A'](locked_sustain.png)
 <br>
 
