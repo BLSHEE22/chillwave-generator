@@ -1,5 +1,5 @@
 # Chillwave Generator
-An engine that randomly generates chillwave music.
+Generate your own chillwave music.
 
 ## Setup
 
